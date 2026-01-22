@@ -17,6 +17,7 @@ namespace ContactApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddHealthChecks();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
@@ -31,6 +32,7 @@ namespace ContactApi
 
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.MapHealthChecks("/api/health");
 
             app.UseCors("AllowAll");
             app.MapControllers();
