@@ -5,7 +5,7 @@
 # RUN npm install
 # COPY . .
 # RUN npm run build
- 
+
 # # Production Stage
 # FROM nginx:stable-alpine AS production
 # COPY --from=build /app/build /usr/share/nginx/html
@@ -41,8 +41,14 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Fix permissions for non-root execution
+RUN mkdir -p /var/cache/nginx \
+    && chmod -R 777 /var/cache/nginx \
+    && chmod -R 777 /var/run \
+    && chmod -R 777 /usr/share/nginx/html
+
 # Copy build output
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Security: run as non-root
 RUN adduser -D frontend && chown -R frontend /usr/share/nginx/html
@@ -51,6 +57,6 @@ USER frontend
 EXPOSE 80
 
 HEALTHCHECK --interval=30s --timeout=3s \
-  CMD wget --spider -q http://localhost || exit 1
+    CMD wget --spider -q http://localhost || exit 1
 
 CMD ["nginx", "-g", "daemon off;"]

@@ -22,7 +22,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy csproj and restore dependencies
-COPY *.csproj ./
+COPY /ContactApi/*.csproj ./
 RUN dotnet restore
 
 # Copy remaining source code
@@ -55,7 +55,7 @@ ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Healthcheck (Kubernetes friendly)
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
+    CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
 
 # Run app
 ENTRYPOINT ["dotnet", "ContactApi.dll"]
