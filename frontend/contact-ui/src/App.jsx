@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = import.meta.env.VITE_API_BASE_URL || "/api/contacts";
+const API = window.API_BASE_URL || "/api/contacts";
 
 export default function App()
 {
