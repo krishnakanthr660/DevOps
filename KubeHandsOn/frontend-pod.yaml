@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-pod
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: frontend
+    image: people-ui:1.0.0
+    imagePullPolicy: IfNotPresent
+    ports:
+      - containerPort: 80
