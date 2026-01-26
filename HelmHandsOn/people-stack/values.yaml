@@ -1,0 +1,26 @@
+backend:
+  image: people-api:1.0.0
+  replicas: 3
+  port: 8080
+
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+    ASPNETCORE_URLS: http://+:8080
+
+  db:
+    host: postgres-service
+    port: 5432
+    name: people_db
+    user: postgres
+
+frontend:
+  image: people-ui:1.0.0
+  replicas: 1
+  port: 80
+  nodePort: 30080
+
+postgres:
+  image: postgres:16-alpine
+  db: people_db
+  user: postgres
+  storage: 2Gi
