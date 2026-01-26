@@ -1,0 +1,15 @@
+backend:
+  image: people-api:stable
+  replicas: 4
+
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+
+frontend:
+  image: people-ui:stable
+  replicas: 2
+  nodePort: 30080
+
+postgres:
+  storage:
+    size: 10Gi
