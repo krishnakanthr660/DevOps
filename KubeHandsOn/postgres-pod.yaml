@@ -6,14 +6,22 @@ metadata:
     app: postgres
 spec:
   containers:
-  - name: postgres
-    image: postgres:16-alpine
-    ports:
-      - containerPort: 5432
-    env:
-      - name: POSTGRES_DB
-        value: people_db
-      - name: POSTGRES_USER
-        value: postgres
-      - name: POSTGRES_PASSWORD
-        value: postgres
+    - name: postgres
+      image: postgres:16-alpine
+      ports:
+        - containerPort: 5432
+      env:
+        - name: POSTGRES_DB
+          value: people_db
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD_FILE
+          value: /etc/db-secrets/db-password
+      volumeMounts:
+        - name: db-secret
+          mountPath: /etc/db-secrets
+          readOnly: true
+  volumes:
+    - name: db-secret
+      secret:
+        secretName: db-password

@@ -5,4 +5,4 @@ metadata:
 data:
   ASPNETCORE_ENVIRONMENT: "Production"
   ASPNETCORE_URLS: "http://+:8080"
-  ConnectionStrings__Default: "Host=postgres-service;Port=5432;Database=people_db;Username=postgres;Password=postgres"
+  ConnectionStrings__Default: "Host=postgres-service;Port=5432;Database=people_db;Username=postgres;Password=$(DB_PASSWORD)"
