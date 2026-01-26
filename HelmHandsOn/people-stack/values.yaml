@@ -14,10 +14,11 @@ backend:
     user: postgres
 
 frontend:
-  image: people-ui:1.0.0
+  image: people-ui:2.0.0
   replicas: 1
   port: 80
   nodePort: 30080
+  apiBaseUrl: "http://backend:8080"
 
 postgres:
   image: postgres:16-alpine

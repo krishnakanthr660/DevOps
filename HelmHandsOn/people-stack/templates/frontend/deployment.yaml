@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-frontend
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.frontend.image }}
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: {{ .Values.frontend.port }}
+
+          volumeMounts:
+            - name: frontend-config-vol
+              mountPath: /usr/share/nginx/html/config.js
+              subPath: config.js
+
+      volumes:
+        - name: frontend-config-vol
+          configMap:
+            name: {{ .Release.Name }}-frontend-config
