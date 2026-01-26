@@ -22,6 +22,12 @@ frontend:
 
 postgres:
   image: postgres:16-alpine
-  db: people_db
+  database: people_db
   user: postgres
-  storage: 2Gi
+  password: postgres
+  port: 5432
+
+  storage:
+    size: 2Gi
+    accessMode: ReadWriteOnce
+
