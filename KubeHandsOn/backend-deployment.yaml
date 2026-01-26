@@ -23,10 +23,13 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
-          env:
-            - name: ASPNETCORE_ENVIRONMENT
-              value: Production
-            - name: ASPNETCORE_URLS
-              value: http://+:8080
-            - name: ConnectionStrings__Default
-              value: Host=postgres-service;Port=5432;Database=people_db;Username=postgres;Password=postgres
+          # env:
+          #   - name: ASPNETCORE_ENVIRONMENT
+          #     value: Production
+          #   - name: ASPNETCORE_URLS
+          #     value: http://+:8080
+          #   - name: ConnectionStrings__Default
+          #     value: Host=postgres-service;Port=5432;Database=people_db;Username=postgres;Password=postgres
+          envFrom:
+            - configMapRef:
+                name: backend-config
