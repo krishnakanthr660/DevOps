@@ -18,10 +18,15 @@ spec:
         - name: POSTGRES_PASSWORD_FILE
           value: /etc/db-secrets/db-password
       volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
         - name: db-secret
           mountPath: /etc/db-secrets
           readOnly: true
   volumes:
+    - name: postgres-storage
+      persistentVolumeClaim:
+        claimName: postgres-pvc
     - name: db-secret
       secret:
         secretName: db-password
