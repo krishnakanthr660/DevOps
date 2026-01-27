@@ -1,5 +1,8 @@
 backend:
-  image: people-api:1.0.0
+  # image: people-api:1.0.0
+  image:
+    repository: ghcr.io/krishnakanthr660/devops/people-api
+    tag: "1.0.0"
   replicas: 3
   port: 8080
 
@@ -14,7 +17,10 @@ backend:
     user: postgres
 
 frontend:
-  image: people-ui:2.0.0
+  # image: people-ui:2.0.0
+  image:
+    repository: ghcr.io/krishnakanthr660/devops/people-ui
+    tag: "1.0.0"
   replicas: 1
   port: 80
   nodePort: 30080
