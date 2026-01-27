@@ -1,0 +1,582 @@
+PS C:\Users\krishnakanth.ravi> get-history
+
+  Id CommandLine
+  -- -----------
+   1 kubectl get nodes
+   2 kubectl get all
+   3 kubectl get pods
+   4 kubectl get pods — show-labels
+   5 kubectl get pods -- show-labels
+   6 kubectl get pods - show-labels
+   7 kubectl get jobs
+
+
+
+   PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn> get-history
+
+  Id CommandLine
+  -- -----------
+   1 kubectl get nodes
+   2 kubectl get all
+   3 kubectl get pods
+   4 kubectl get pods — show-labels
+   5 kubectl get pods -- show-labels
+   6 kubectl get pods - show-labels
+   7 kubectl get jobs
+   8 get-history
+   9 docker version
+  10 kubectl version --client
+  11 kubectl cluster-info
+  12 kubectl get nodes
+  13 kubectl get pods
+  14 kubectl get services
+  15 kubectl config view
+  16 kubectl config current-context
+  17 kubectl get nodes
+  18 kubectl describe node minikube
+  19 kubectl get pods -n kube-system
+  20 kubectl get nodes
+  21 kubectl get namespaces
+  22 kubectl get pods -A
+  23 kubectl get componentstatuses
+  24 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+  25 kubectl apply -f .\postgres-pod.yaml
+  26 kubectl get pods
+  27 kubectl get pods
+  28 kubectl get pods
+  29 kubectl get pods
+  30 kubectl describe pod postgres-pod
+  31 docker images
+  32 kubectl get pods
+  33 kubectl apply -f .\backend-pod.yaml
+  34 kubectl get pods
+  35 kubectl get pods
+  36 kubectl describe pod backend-pod
+  37 kubectl describe pod backend-pod
+  38 kubectl describe pod backend-pod
+  39 kubectl get pods
+  40 docker images
+  41 minikube image load people-api:1.0.0
+  42 minikube ssh
+  43 minikube image ls | findstr people
+  44 kubectl get pods
+  45 minikube image load people-ui:1.0.0
+  46 minikube image ls | findstr people
+  47 kubectl apply -f .\frontend-pod.yaml
+  48 kubectl get pods -o wide
+  49 kubectl describe pod backend-pod
+  50 kubectl describe pod backend-pod
+  51 kubectl get pods -o wide
+  52 kubectl get pods -o wide
+  53 kubectl get pods -o wide
+  54 kubectl describe pod backend-pod
+  55 kubectl get pods -o wide
+  56 kubectl describe pod backend-pod
+  57 kubectl get pods -o wide
+  58 kubectl get deployment
+  59 kubectl rollout restart pod/backend-pod
+  60 kubectl apply -f .\backend-pod.yaml
+  61 kubectl describe pod backend-pod
+  62 kubectl delete pod backend-pod
+  63 kubectl apply -f .\backend-pod.yaml
+  64 kubectl get pods -o wide
+  65 kubectl describe pod backend-pod
+  66 kubectl exec -it backend-pod -- sh
+  67 kubectl exec -it backend-pod -- sh
+  68 kubectl get pods -o wide
+  69 kubectl describe pod backend-pod
+  70 kubectl get pods -o wide
+  71 kubectl describe pod backend-pod
+  72 kubectl delete pod backend-pod
+  73 kubectl get pods -o wide
+  74 kubectl apply -f .\backend-pod.yaml
+  75 kubectl exec -it backend-pod -- sh
+  76 kubectl get pods -o wide
+  77 kubectl describe pod backend-pod
+  78 kubectl logs backend-pod --previous
+  79 kubectl logs backend-pod
+  80 kubectl delete pod backend-pod
+  81 kubectl apply -f .\backend-pod.yaml
+  82 kubectl describe pod backend-pod
+  83 kubectl describe pod backend-pod
+  84 kubectl logs backend-pod
+  85 kubectl logs backend-pod
+  86 kubectl logs postgres-pod
+
+
+
+Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 ls
+   3 minikube status
+   4 minikube start
+   5 minikube status
+   6 minikube start
+   7 kubectl get pods -o wide
+   8 docker ps
+   9 docker ps
+  10 kubectl get pods -o wide
+  11 kubectl logs backend-pod
+  12 kubectl delete pod backend-pod
+  13 kubectl apply -f .\backend-pod.yaml
+  14 kubectl logs backend-pod -w
+  15 kubectl logs backend-pod
+  16 kubectl get svc
+  17 kubectl apply -f .\postgres-service.yaml
+  18 kubectl get svc
+  19 kubectl logs postgres-service
+  20 kubectl delete pod backend-pod
+  21 kubectl apply -f .\backend-pod.yaml
+  22 kubectl get pods -o wide
+  23 kubectl logs backend-pod
+  24 kubectl exec -it backend-pod -- sh
+  25 kubectl port-forward pod/frontend-pod 8083:80
+  26 kubectl apply -f multi-container-pod.yaml
+  27 kubectl get pods -o wide
+  28 kubectl logs backend-nginx-pod
+  29 kubectl describe pod backend-nginx-pod
+  30 kubectl get pods -o wide
+  31 kubectl logs backend-nginx-pod
+  32 kubectl apply -f multi-container-pod.yaml
+  33 kubectl delete pod backend-nginx-pod
+  34 kubectl apply -f multi-container-pod.yaml
+  35 kubectl describe pod backend-nginx-pod
+  36 kubectl get pods -o wide
+  37 kubectl logs backend-nginx-pod -c backend
+  38 kubectl logs backend-nginx-pod -c nginx
+  39 kubectl get pods -o wide
+  40 kubectl delete pod backend-nginx-pod backend-pod frontend-pod postgres-pod
+  41 kubectl delete svc postgres-service
+  42 kubectl get pods -o wide
+  43 kubectl get svc -o wide
+  44 kubectl apply -f backend-deployment.yaml
+  45 kubectl get deployments
+  46 kubectl get replicaset
+  47 kubectl get pods -l app=backend
+  48 kubectl get pods -o wide
+  49 kubectl logs backend-deployment-66f48f666c-q7tg2
+  50 kubectl delete pod backend-deployment-66f48f666c-q7tg2
+  51 kubectl get pods -o wide
+  52 kubectl scale deployment backend-deployment --replicas=3
+  53 kubectl get pods -o wide
+  54 kubectl delete pod backend-deployment-66f48f666c-5td5p
+  55 kubectl apply -f backend-deployment.yaml
+  56 kubectl get pods -o wide
+  57 kubectl get pods -o wide
+  58 kubectl rollout status deployment/backend-deployment
+  59 kubectl rollout history deployment/backend-deployment
+  60 kubectl get pods -o wide
+  61 kubectl logs backend-deployment-75bf459c66-vqhnl
+  62 kubectl describe pod backend-deployment-75bf459c66-vqhnl
+  63 kubectl get pods -o wide
+  64 kubectl describe pod backend-deployment-66f48f666c-bslqm
+  65 kubectl rollout undo deployment/backend-deployment
+  66 kubectl rollout history deployment/backend-deployment
+  67 kubectl get pods -o wide
+  68 kubectl describe pod backend-deployment-66f48f666c-bslqm
+  69 kubectl describe pod backend-deployment-75bf459c66-vqhnl
+  70 kubectl apply -f .\postgres-service.yaml
+  71 kubectl get pods -o wide
+  72 kubectl get deployments
+  73 kubectl delete deployment backend-deployment
+  74 kubectl get pods -o wide
+  75 kubectl get pods -o wide
+  76 kubectl apply -f .\postgres-pod.yaml
+  77 kubectl get svc -o wide
+  78 kubectl apply -f backend-deployment.yaml
+  79 kubectl apply -f backend-deployment.yaml
+  80 kubectl get pods -o wide
+  81 kubectl logs backend-deployment-58b6d79bbc-twt5n
+  82 kubectl scale deployment backend-deployment --replicas=3
+  83 kubectl rollout history deployment/backend-deployment
+  84 kubectl rollout undo deployment/backend-deployment
+  85 kubectl rollout status deployment/backend-deployment
+  86 kubectl apply -f backend-deployment.yaml
+  87 kubectl rollout status deployment/backend-deployment
+  88 kubectl get pods -o wide
+  89 kubectl rollout history deployment/backend-deployment
+  90 kubectl get pods -o wide
+  91 kubectl apply -f backend-deployment.yaml
+  92 kubectl rollout status deployment/backend-deployment
+  93 kubectl get pods -o wide
+
+
+
+Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 get-history
+   3 nslookup backend
+   4 nslookup backend.default.svc.cluster.local
+   5 nslookup postgres
+   6 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- sh
+   7 minikube ip
+   8 minikube service frontend
+   9 kubectl get endpoints backend
+  10 minikube service frontend
+  11 kubectl get pods -o wide
+  12 kubectl logs backend-deployment-58b6d79bbc-44k8m
+  13 kubectl logs backend-deployment-58b6d79bbc-jk7qp
+  14 kubectl logs backend-deployment-58b6d79bbc-nqt6c
+  15 kubectl logs frontend-pod
+  16 kubectl get pods -o wide
+  17 kubectl exec -it frontend-pod -- sh
+  18 kubectl exec -it frontend-pod -- sh
+  19 kubectl apply -f frontend-configmap.yaml
+  20 kubectl delete pod frontend-pod
+  21 minikube ssh
+  22 docker compose build frontend
+  23 docker images
+  24 minikube image load people-ui:2.0.0
+  25 minikube ssh
+  26 kubectl apply -f frontend-pod.yaml
+  27 kubectl get pods -o wide
+  28 kubectl logs frontend-pod
+  29 kubectl delete pod frontend-pod
+  30 kubectl apply -f frontend-pod.yaml
+  31 kubectl logs frontend-pod
+  32 kubectl get pods -o wide
+  33 minikube service frontend
+  34 kubectl get pods -w
+
+
+
+Id CommandLine
+  -- -----------
+   1 cdD:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   3 kubectl get pods -o wide
+   4 kubectl logs frontend-pod
+   5 kubectl exec -it frontend-pod -- cat /usr/share/nginx/html/config.js
+   6 kubectl exec -it frontend-pod -- curl http://backend:8080
+   7 kubectl exec -it frontend-pod -- curl http://backend:8080\api\health
+   8 kubectl exec -it frontend-pod -- curl http://backend:8080/api/health
+   9 kubectl exec -it frontend-pod -- sh
+  10 kubectl apply -f backend-configmap.yaml
+  11 kubectl get configmap backend-config -o yaml
+  12 kubectl apply -f backend-deployment.yaml
+  13 kubectl get pods -o wide
+  14 kubectl logs backend-deployment-9cf575658-4zkvk
+  15 kubectl apply -f backend-configmap.yaml
+  16 kubectl get pods -o wide
+  17 kubectl logs backend-deployment-9cf575658-4zkvk
+  18 kubectl get pods -o wide
+  19 kubectl apply -f backend-configmap.yaml
+  20 kubectl apply -f backend-deployment.yaml
+  21 kubectl apply -f backend-deployment.yaml
+  22 kubectl get pods -o wide
+  23 kubectl get pods -o wide
+  24 kubectl pod logs backend-deployment-9cf575658-frtd2
+  25 kubectl logs backend-deployment-9cf575658-frtd2
+  26 kubectl apply -f backend-configmap.yaml
+  27 kubectl logs backend-deployment-9cf575658-frtd2
+  28 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | grep ConnectionStrings
+  29 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr ConnectionStrings
+  30 kubectl apply -f backend-configmap.yaml
+  31 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr ConnectionStrings
+  32 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr ConnectionStrings
+  33 kubectl rollout restart deployment backend-deployment
+  34 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr ConnectionStrings
+
+
+  PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn> get-history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 kubectl get secrets
+   3 kubectl get secrets
+   4 minikube start
+   5 kubectl create secret generic db-password \
+   6   --from-file=db-password=./secrets/db-password.txt
+   7 kubectl create secret generic db-password \
+   8   --from-file=db-password=./secrets/db-password.txt
+   9 kubectl create secret generic db-password \
+  10 kubectl create secret generic db-password --from-file=db-password=./secrets/db-password.txt
+  11 cd ..\secrets\
+  12 cd ..\KubeHandsOn\
+  13 kubectl create secret generic db-password --from-file=db-password=../secrets/db-password.txt
+  14 kubectl get secrets
+  15 kubectl describe secret db-password
+  16 kubectl get secret db-password -o yaml
+  17 kubectl delete pod postgres-pod
+  18 kubectl apply -f postgres-pod.yaml
+  19 kubectl exec -it postgres-pod -- cat /run/secrets/db-password
+  20 kubectl get pods -o wide
+  21 kubectl logs postgres-pod
+  22 kubectl logs postgres-pod
+  23 kubectl get pods -o wide
+  24 kubectl describe pod postgres-pod
+  25 kubectl describe secret db-password
+  26 echo -n "postgres" | base64
+  27 kubectl exec -it postgres-pod -- cat /run/secrets/db-password
+  28 kubectl delete pod postgres-pod
+  29 kubectl apply -f postgres-pod.yaml
+  30 kubectl get pods -o wide
+  31 kubectl describe pod postgres-pod
+  32 kubectl delete pod postgres-pod
+  33 kubectl get pods -o wide
+  34 kubectl apply -f postgres-pod.yaml
+  35 kubectl get pods -o wide
+  36 kubectl exec -it postgres-pod -- ls /etc/db-secrets
+  37 kubectl logs postgres-pod
+  38 kubectl get pods -o wide
+  39 kubectl apply .\backend-secret.yaml
+  40 kubectl apply -f .\backend-secret.yaml
+  41 kubectl rollout restart deployment backend-deployment
+  42 kubectl get pods -o wide
+  43 kubectl get pods -o wide
+  44 kubectl logs backend-deployment-6f46b9868-f6hvt
+  45 kubectl get svc
+  46 kubectl get all
+  47 kubectl logs backend-deployment-6f46b9868-f6hvt
+  48 kubectl get svc
+  49 kubectl get configMap
+  50 kubectl describe configMap backend-config
+  51 kubectl apply -f .\backend-configmap.yaml
+  52 kubectl describe configMap backend-config
+  53 kubectl rollout restart deployment backend-deployment
+  54 kubectl get pods -o wide
+  55 kubectl logs backend-deployment-5c9d689b55-jsv68
+  56 kubectl apply -f .\postgres-pod.yaml
+  57 kubectl rollout restart deployment backend-deployment
+  58 kubectl get pods -o wide
+  59 kubectl get pods -o wide
+  60 kubectl rollout restart deployment backend-deployment
+  61 kubectl get pods -o wide
+  62 kubectl logs backend-deployment-6d54c5f4fb-fdjrw
+  63 kubectl get pods -o wide
+  64 kubectl logs backend-deployment-77747b5c87-2875x
+  65 kubectl get pods -o wide
+  66 kubectl logs postgres-pod
+  67 kubectl get secrete
+  68 kubectl get secret
+  69 kubectl delete secret db-password
+  70 kubectl apply -f .\postgres-secret.yaml
+  71 kubectl get pods -o wide
+  72 kubectl logs postgres-pod
+  73 kubectl delete pod postgres-pod
+  74 kubectl get pods -o wide
+  75 kubectl apply -f .\postgres-pod.yaml
+  76 kubectl logs postgres-pod
+  77 kubectl get secret
+  78 kubectl delete secret backend-db-secret
+  79 kubectl get secret
+  80 kubectl apply -f .\backend-secret.yaml
+  81 kubectl get configMap
+  82 kubectl delete configMap backend-config
+  83 kubectl get deployment
+  84 kubectl delete backend-deployment
+  85 kubectl delete deployment backend-deployment
+  86 kubectl logs postgres-pod
+  87 kubectl get pods -o wide
+  88 kubectl apply -f .\backend-deployment.yaml
+  89 kubectl get pods -o wide
+  90 kubectl get pods -o wide
+  91 kubectl describe pod backend-deployment-5fd6cf7db6-cgpk8
+  92 kubectl get configMap
+  93 kubectl apply -f .\backend-configmap.yaml
+  94 kubectl get configMap
+  95 kubectl rollout restart deployment backend-deployment
+  96 kubectl get pods -o wide
+  97 kubectl get pods -o wide
+  98 kubectl get pods -o wide
+  99 kubectl get pods -o wide
+ 100 kubectl get pods -o wide
+ 101 kubectl logs postgres-pod
+ 102 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | grep DB_PASSWORD
+ 103 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr DB_PASSWORD
+ 104 kubectl exec -it $(kubectl get pod -l app=backend -o jsonpath='{.items[0].metadata.name}') -- printenv | findstr DB_PASSWORD
+ 105 kubectl get pods -o wide
+ 106 kubectl logs backend-deployment-9b4795b47-p9qwn
+ 107 kubectl logs backend-deployment-9b4795b47-p9qwn
+ 108 kubectl apply -f .\backend-configmap.yaml
+ 109 kubectl describe configMap backend-config
+ 110 kubectl rollout restart deployment backend-deployment
+ 111 kubectl get pods -o wide
+ 112 kubectl get pods -o wide
+ 113 kubectl get pods -o wide
+ 114 kubectl get pods -o wide
+ 115 kubectl logs backend-deployment-7846d76764-4z2fp
+ 116 kubectl get svc
+ 117 minikube service frontend
+ 118 kubectl get pods -o wide
+ 119 kubectl exec -it frontend-pod -sh
+ 120 kubectl exec -it frontend-pod -- sh
+ 121 kubectl get pods -o wide
+ 122 kubectl rollout restart postgres-pod
+ 123 kubectl delete pod postgres-pod
+ 124 kubectl apply -f .\postgres-pod.yaml
+ 125 kubectl exec -it frontend-pod -- sh
+ 126 kubectl apply -f postgres-pv.yaml
+ 127 kubectl get pv
+ 128 kubectl apply -f postgres-pvc.yaml
+ 129 kubectl get pvc
+ 130 kubectl get pv
+ 131 kubectl get pvc
+ 132 kubectl get storageclass
+ 133 kubectl delete pod postgres-pod
+ 134 kubectl apply -f postgres-pod.yaml
+ 135 kubectl exec -it frontend-pod -sh
+ 136 kubectl exec -it frontend-pod -- sh
+ 137 kubectl exec -it postgres-pod -- df -h
+ 138 kubectl exec -it postgres-pod -- ls /var/lib/postgresql/data
+ 139 kubectl delete pod postgres-pod
+ 140 kubectl apply -f postgres-pod.yaml
+ 141 kubectl exec -it frontend-pod -- sh
+ 142 kubectl exec -it postgres-pod -- psql -U postgres -d people_db
+ 143 kubectl exec -it frontend-pod -sh
+ 144 kubectl exec -it frontend-pod -- sh
+ 145 kubectl delete pod postgres-pod
+ 146 kubectl apply -f postgres-pod.yaml
+ 147 kubectl exec -it frontend-pod -- sh
+ 148 kubectl exec -it postgres-pod -- psql -U postgres -d people_db
+ 149 kubectl get storageclass
+ 150 kubectl describe pvc postgres-pvc
+ 151 kubectl describe pv postgres-pv
+ 152 kubectl logs postgres-pod
+ 153 kubectl exec -it postgres-pod -- mount
+ 154 kubectl get secrets | grep sh.helm.release
+ 155 kubectl get secrets
+ 156 helm version
+
+
+ PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn> get-history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 kubectl exec -it frontend-pod -sh
+   3 kubectl get pods -o wide
+   4 kubectl logs backend-deployment-7846d76764-4z2fp
+   5 kubectl logs backend-deployment-7846d76764-n2k7q
+   6 kubectl logs backend-deployment-7846d76764-x9ng8
+   7 kubectl logs backend-deployment-7846d76764-x9ng8
+   8 kubectl get svc
+   9 kubectl get pods -o wide
+  10 kubectl get pods -o wide
+  11 kubectl logs postgres-pod
+  12 kubectl rollout restart deployment backend-deployment
+  13 kubectl rollout restart deployment backend-deployment
+  14 kubectl logs postgres-pod
+  15 kubectl get pods -o wide
+  16 kubectl logs postgres-pod
+  17 kubectl get pods -o wide
+  18 kubectl logs postgres-pod
+  19 kubectl logs postgres-pod
+  20 kubectl rollout restart deployment backend-deployment
+  21 kubectl logs postgres-pod
+  22 kubectl get pods -o wide
+  23 kubectl logs postgres-pod
+  24 kubectl logs postgres-pod
+  25 kubectl logs postgres-pod
+  26 kubectl logs postgres-pod
+  27 kubectl logs postgres-pod
+
+
+
+  PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn> get-history
+
+  Id CommandLine
+  -- -----------
+   1 get-content
+   2 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   3 kubectl get pods -o wide
+   4 kubectl delete pod people-postgres-0
+   5 kubectl get pods -o wide
+   6 kubectl exec -it backend-deployment-5ccbd59799-rtjqh -- kill 1
+   7 kubectl describe pod backend-deployment-5ccbd59799-rtjqh
+   8 kubectl get svc
+   9 kubectl apply -f nginx-configmap.yaml
+  10 kubectl apply -f nginx-deployment.yaml
+  11 kubectl apply -f nginx-service.yaml
+  12 kubectl get pods -o wide
+  13 kubectl get pods -o wide
+  14 kubectl logs nginx-7cd6dd5dc4-d8kdm
+  15 minikube service nginx-service --url
+  16 kubectl get configmap
+  17 kubectl describe nginx-config
+  18 kubectl describe configmap nginx-config
+  19 kubectl describe deployment nginx
+  20 kubectl apply -f nginx-configmap.yaml
+  21 kubectl rollout restart deployment nginx
+  22 kubectl exec -it deploy/nginx -- sh
+  23 kubectl apply -f nginx-deployment.yaml
+  24 kubectl apply -f nginx-configmap.yaml
+  25 kubectl apply -f nginx-deployment.yaml
+  26 kubectl rollout restart deployment nginx
+  27 kubectl get pods -o wide
+  28 kubectl logs nginx-58554895c4-n2bpx
+  29 kubectl logs nginx-58554895c4-n2bpx
+  30 kubectl logs nginx-dd9d8cbdb-czrzf
+  31 kubectl get pods -o wide
+  32 kubectl describe pod nginx-dd9d8cbdb-czrzf
+  33 kubectl delete deploy/nginx
+  34 kubectl get pods -o wide
+  35 kubectl apply -f nginx-configmap.yaml
+  36 kubectl apply -f nginx-service.yaml
+  37 kubectl apply -f nginx-deployment.yaml
+  38 kubectl get pods -o wide
+  39 kubectl get pods -o wide
+  40 kubectl describe pod nginx-7fd88bd5df-5kjjq
+  41 kubectl get pods -o wide
+  42 kubectl exec -it nginx-7fd88bd5df-5kjjq -- nginx -t
+  43 kubectl get pods -o wide
+  44 kubectl exec -it nginx-7fd88bd5df-5kjjq -- sh
+  45 kubectl logs nginx-7fd88bd5df-5kjjq --previous
+  46 kubectl delete deploy/nginx
+  47 kubectl apply -f nginx-configmap.yaml
+  48 kubectl apply -f nginx-deployment.yaml
+  49 kubectl get pods -o wide
+  50 kubectl describe pod nginx-7fd88bd5df-z2g2m
+  51 kubectl logs nginx-7fd88bd5df-z2g2m -- previous
+  52 kubectl get pods -o wide
+  53 kubectl logs nginx-7fd88bd5df-z2g2m -- previous
+  54 kubectl delete deploy/nginx
+  55 kubectl apply -f nginx-configmap.yaml
+  56 kubectl apply -f nginx-deployment.yaml
+  57 kubectl get pods -o wide
+  58 kubectl logs nginx-7fd88bd5df-892dt -- previous
+  59 kubectl delete deploy/nginx
+  60 kubectl get svc
+  61 kubectl delete nginx-serrvice
+  62 kubectl delete svc nginx-serrvice
+  63 kubectl delete svc nginx-serrvice
+  64 kubectl delete svc nginx-service
+  65 kubectl delete configmap nginx-config
+  66 minikube addons list
+  67 minikube addons enable ingress
+  68 kubectl get pods -o wide
+  69 minikube addons list
+  70 kubectl get pods -A
+  71 minikube ip
+  72 kubectl get ingress
+  73 kubectl get pods -n ingress-nginx
+  74 kubectl get svc
+  75 kubectl apply -f app-ingress.yaml
+  76 kubectl get ingress
+  77 kubectl get svc -n kube-system
+  78 kubectl get svc
+  79 kubectl get svc -a
+  80 kubectl get svc -A
+  81 minikube tunnel
+
+
+PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn> get-history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 kubectl get pods -w
+   3 kubectl get pods -o wide
+   4 kubectl logs nginx-7cd6dd5dc4-d8kdm
+   5 kubectl get deployment
+   6 kubectl exec -it deploy/nginx -- sh
+   7 kubectl exec -it deploy/nginx -- sh
+   8 kubectl exec -it deploy/nginx -- sh
+   9 kubectl exec -it deploy/nginx -- sh
+  10 kubectl exec -it deploy/nginx -- sh
+  11 kubectl get pods -o wide
+  12 kubectl get pods -o wide -A
+  13 kubectl exec -it ingress-nginx-controller-9cc49f96f-rtvxm -- curl http://backend:8080
