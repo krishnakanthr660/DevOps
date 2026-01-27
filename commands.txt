@@ -63,3 +63,18 @@ d CommandLine
   16 docker ps
   17 docker ps
   18 docker logs people-api
+
+
+  C:\Users\krishnakanth.ravi>doskey /history
+minikube status
+minikube startu
+minikube dashboard
+minikube start
+minikube status
+minikube dashboard
+minikube addons list
+minikube profile list
+kubectl get nodes
+minikube version
+minikube status
+doskey /history
