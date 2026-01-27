@@ -27,8 +27,12 @@ spec:
             - name: frontend-config-vol
               mountPath: /usr/share/nginx/html/config.js
               subPath: config.js
+            - mountPath: /etc/nginx/conf.d/
+              name: nginx-dir
 
       volumes:
         - name: frontend-config-vol
           configMap:
             name: {{ .Release.Name }}-frontend-config
+        - name: nginx-dir
+          emptyDir: { }
