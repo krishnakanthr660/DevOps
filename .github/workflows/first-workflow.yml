@@ -1,10 +1,43 @@
 name: first
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 jobs:
-  first-job:
+  Run-Test:
     runs-on: ubuntu-latest
     steps:
       - name: hello
         run: |
           echo "First output"
           echo "Second output"
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.2.0
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
+  Deploy:
+    needs: Run-Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello
+        run: |
+          echo "First output"
+          echo "Second output"
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.2.0
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: status
+        run: echo "deploying...."
+      - name: expression and object
+        run: echo "${{ toJson(github) }}"
