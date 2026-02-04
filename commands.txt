@@ -1,0 +1,80 @@
+d CommandLine
+  -- -----------
+   1 try { . "c:\Users\krishnakanth.ravi\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+   2 get-history
+   3 get-history
+   4 ls
+   5 doskey /history
+   6 get-history
+   7 history
+   8 docker ps
+   9 docker compose down -v
+  10 docker ps
+  11 docker compose down -v
+  12 docker compose up -d --build
+  13 docker ps
+  14 docker compose down -v
+  15 docker compose up -d --build
+  16 docker compose up -d --build
+  17 docker compose up -d
+  18 docker compose up -d --build
+  19 docker compose up -d --build
+  20 docker compose up -d --build
+  21 docker compose down -v
+  22 docker compose up -d --force-recreate
+  23 docker compose down -v
+  24 docker compose up -d --force-recreate
+  25 docker compose down -v
+  26 docker compose up -d --force-recreate
+  27 docker compose down -v
+  28 docker compose up -d --force-recreate
+  29 docker compose up -d --force-recreate
+  30 docker compose up -d --force-recreate
+  31 docker compose up -d --force-recreate
+  32 docker compose up -d --force-recreate
+  33 docker compose down -v
+  34 docker compose up -d --force-recreate
+  35 docker compose down -v
+  36 docker compose up -d --force-recreate
+  37 docker compose down -v
+  38 docker compose up -d --build --force-recreate
+  39 docker compose up -d --build --force-recreate
+
+
+
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager
+   2 docker compose up -d
+   3 docker ps
+   4 docker ps
+   5 docker logs people-api
+   6 docker logs people-api -w
+   7 docker logs people-api --watch
+   8 docker logs people-api
+   9 docker ps
+  10 docker logs pgadmin
+  11 docker ps
+  12 docker logs pgadmin
+  13 docker ps
+  14 docker logs people-api
+  15 docker ps
+  16 docker ps
+  17 docker ps
+  18 docker logs people-api
+
+
+  C:\Users\krishnakanth.ravi>doskey /history
+minikube status
+minikube startu
+minikube dashboard
+minikube start
+minikube status
+minikube dashboard
+minikube addons list
+minikube profile list
+kubectl get nodes
+minikube version
+minikube status
+doskey /history

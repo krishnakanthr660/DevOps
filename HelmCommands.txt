@@ -1,0 +1,84 @@
+Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 helm version
+   3 cd ..
+   4 cd .\HelmHandsOn\
+   5 helm create people-stack
+   6 cd people-stack
+   7 helm install people ./people-stack
+   8 helm install people
+   9 cd ..
+  10 helm install people .\people-stack\
+  11 helm list
+  12 kubectl get deployments
+  13 kubectl get pods
+  14 kubectl get secrets | grep helm
+  15 kubectl describe secret sh.helm.release.v1.people.v1
+  16 helm repo list
+  17 helm repo update
+  18 helm list
+  19 helm install test-nginx bitnami/nginx
+  20 helm list
+  21 kubectl get pods
+  22 kubectl get svc
+  23 kubectl logs test-nginx-55c744bfd5-cttjw
+  24 minikube service test-nginx
+  25 helm status test-nginx
+  26 helm history test-nginx
+  27 kubectl describe secret sh.helm.release.v1.test-nginx.v1
+  28 helm uninstall test-nginx
+  29 helm list
+  30 helm template people ./people-stack
+  31 helm install people ./people-stack
+  32 helm list
+  33 helm uninstall people
+  34 helm install people ./people-stack
+  35 kubectl get deployments
+  36 kubectl get pods
+  37 kubectl get svc
+  38 kubectl get configmaps
+  39 kubectl get secrets
+  40 kubectl delete svc backend
+  41 helm install people ./people-stack
+  42 kubectl get deployments
+  43 kubectl get pods
+  44 kubectl get svc
+  45 kubectl get configmaps
+  46 kubectl get secrets
+  47 kubectl logs people-backend-7bb67d8fc8-frw6z
+  48 kubectl get deployments
+  49 kubectl get pods
+  50 kubectl get svc
+  51 kubectl get configmaps
+  52 kubectl get secrets
+  53 kubectl get svc
+  54 helm template people ./people-stack
+  55 helm upgrade people ./people-stack
+  56 kubectl get svc
+  57 kubectl delete svc frontend
+  58 helm upgrade people ./people-stack
+  59 helm history people
+  60 kubectl get deployments
+  61 kubectl get pods
+  62 kubectl get svc
+  63 kubectl get configmaps
+  64 kubectl get secrets
+  65 minikube service frontend --url
+  66 helm upgrade people ./people-stack
+  67 kubectl delete svc postgres-service
+  68 helm upgrade people ./people-stack
+  69 kubectl get deployments
+  70 kubectl get pods
+  71 kubectl get svc
+  72 kubectl get configmaps
+  73 kubectl get secrets
+  74 kubectl exec -it frontend-pod -sh
+  75 kubectl exec -it people-frontend-bb4ccbd5c-c5vt9 -sh
+  76 kubectl exec -it people-frontend-bb4ccbd5c-c5vt9 -- sh
+  77 helm install people-dev ./people-stack -f values-dev.yamll
+  78 helm list
+  79 helm history people
+  80 helm package people-stack
+  81 helm install people-release ./people-stack-1.0.0.tgz
+  82 helm install people-release .\people-stack-0.1.0.tgz

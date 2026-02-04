@@ -1,0 +1,130 @@
+Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\KubeHandsOn
+   2 ls
+   3 cd ..
+   4 crc status
+   5 kubectl config get-clusters
+   6 oc list
+   7 oc
+   8 os list
+   9 oc list
+  10 oc get project
+  11 oc get pods
+  12 oc login
+  13 oc login --token=sha256~4Z7Lcxt2u6IpIbKjTO_zaeYTUXBZ2Pgr9oZYkG0BaEc --server=https://api.rm1.0a51.p1.openshiftapps.com:6443
+  14 oc list
+  15 oc get projecets
+  16 oc get projecs
+  17 oc get projects
+  18 ls
+  19 cd .\OCHandsOn\
+  20 oc new-project my-first-app
+  21 kubectl get clusters
+  22 kubectl config get-clusters
+  23 kubectl config current-context
+  24 kubectl get pods
+  25 oc get pods
+  26 oc get all -A
+  27 oc get all
+  28 oc project
+  29 helm list -A
+  30 oc get deploy
+  31 oc get projects
+  32 cd D:\KrishnaLearning\DevOps\Kube\openshift-udemy\microservices-demo-openshift
+  33 ls
+  34 helm uninstall .\complete-demo.yaml
+  35 oc get release
+  36 helm list
+  37 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\HelmHandsOn
+  38 get-history
+  39 helm install myapp .\people-stack-0.1.0.tgz
+  40 helm list
+  41 oc get pods
+  42 oc get deployment
+  43 helm delete deployment carts carts-db catalogue catalogue-db orders orders-db payment
+  44 kubectl delete deployment carts
+  45 kubectl delete deployment carts-db catalogue catalogue-db orders orders-db payment
+  46 oc get pods
+  47 oc get deployment
+  48 kubectl delete deployment front-end nginx-deployment queue-master rabbitmq
+  49 oc get deployment
+  50 kubectl delete deployment shipping user user-db
+  51 kubectl get all
+  52 helm list
+  53 helm uninstall myapp
+  54 kubectl get all
+  55 kubectl delete svc carts carts-db catalogue catalogue-db front-end modelmesh-serving orders orders-db payment queue-master rabbitmq shipping user u...
+  56 kubectl get all
+  57 kubectl delete svc modelmesh-serving
+  58 kubectl get all
+
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager\HelmHandsOn
+   2 oc get pods
+   3 oc get svc
+   4 oc get deployments
+   5 oc get statefulsets
+   6 helm install .\people-stack-0.1.0.tgz
+   7 helm install myapp .\people-stack-0.1.0.tgz
+   8 ls
+   9 helm package people-stack
+  10 helm install myapp .\people-stack-0.1.0.tgz
+  11 helm upgrade myapp .\people-stack-0.1.0.tgz
+  12 helm dashboard
+  13 oc dashboard
+  14 docker login ghcr.io -u krishnakanthr660 -p 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
+  15 docker ps
+  16 docker images
+  17 docker info
+  18 docker ps
+  19 docker images
+  20 docker push ghcr.io/krishnakanthr660 /DevOps/people-api:1.0.0
+  21 docker push ghcr.io/krishnakanthr660/DevOps/people-api:1.0.0
+  22 docker push ghcr.io/krishnakanthr660/devops/people-api:1.0.0
+  23 docker tag people-api:1.0.0 ghcr.io/krishnakanthr660/devops/people-api:1.0.0
+  24 docker push ghcr.io/krishnakanthr660/devops/people-api:1.0.0
+  25 docker push ghcr.io/krishnakanthr660/devops/people-ui:1.0.0
+  26 docker tag people-ui:1.0.0 ghcr.io/krishnakanthr660/devops/people-ui:1.0.0
+  27 docker push ghcr.io/krishnakanthr660/devops/people-ui:1.0.0
+  28 docker push ghcr.io/krishnakanthr660/devops/people-ui:1.0.0
+  29 helm template .
+  30 cd .\people-stack\
+  31 helm template .
+  32 helm package people-stack
+  33 cd ..
+  34 helm package people-stack
+  35 kubectl config current-context
+  36 helm upgrade myapp .\people-stack-0.1.0.tgz
+  37 kubectl get pods
+  38 kubectl describe pod myapp-postgres-0
+  39 helm uninstall myapp
+  40 kubectl get all
+  41 kubectl describe route front-end
+  42 kubectl get all
+  43 helm install .\people-stack-0.1.0.tgz
+  44 helm install myapp .\people-stack-0.1.0.tgz
+  45 kubectl get pods
+  46 kubectl describe pod myapp-postgres-0
+  47 kubectl logs myapp-postgres-0
+  48 helm package people-stack
+  49 helm uninstall myapp
+  50 helm uninstall myapp
+  51 helm install .\people-stack-0.1.0.tgz
+  52 helm install myapp .\people-stack-0.1.0.tgz
+  53 kubectl get pods
+  54 kubectl logs myapp-postgres-0
+  55 kubectl logs myapp-backend-68c5f7d6-xntxv
+  56 kubectl logs myapp-frontend-584b64b5bf-sl4tw
+  57 cd .\people-stack\
+  58 cd ..
+  59 helm template .
+  60 cd .\people-stack\
+  61 helm template .
+  62 cd ..
+  63 helm package people-stack
+  64 helm upgrade myapp .\people-stack-0.1.0.tgz
+  65 kubectl get pods
+  66 kubectl logs myapp-frontend-86d48f758c-brkfb

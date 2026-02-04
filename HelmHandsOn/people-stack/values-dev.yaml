@@ -1,0 +1,12 @@
+backend:
+  replicas: 1
+
+  env:
+    ASPNETCORE_ENVIRONMENT: Development
+
+frontend:
+  replicas: 1
+
+postgres:
+  storage:
+    size: 1Gi

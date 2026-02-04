@@ -1,0 +1,38 @@
+backend:
+  # image: people-api:1.0.0
+  image:
+    repository: ghcr.io/krishnakanthr660/devops/people-api
+    tag: ""
+  replicas: 1
+  port: 8080
+
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+    ASPNETCORE_URLS: http://+:8080
+
+  db:
+    host: postgres-service
+    port: 5432
+    name: people_db
+    user: postgres
+
+frontend:
+  # image: people-ui:2.0.0
+  image:
+    repository: ghcr.io/krishnakanthr660/devops/people-ui
+    tag: ""
+  replicas: 1
+  port: 80
+  nodePort: 30080
+  apiBaseUrl: "http://backend:8080"
+
+postgres:
+  image: postgres:16-alpine
+  database: people_db
+  user: postgres
+  password: postgres
+  port: 5432
+
+  storage:
+    size: 2Gi
+    accessMode: ReadWriteOnce
