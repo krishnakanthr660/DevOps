@@ -31,7 +31,8 @@ jobs:
 
       - name: Build & Push Backend
         run: |
-          IMAGE=ghcr.io/${{ github.repository }}/people-api:${{ steps.meta.outputs.tag }}
+          REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$REPO/people-api:${{ github.sha }}
           docker build -t $IMAGE ./backend/ContactApi
           docker push $IMAGE
           # docker build -t ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }} \
