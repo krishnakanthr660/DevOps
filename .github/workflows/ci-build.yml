@@ -31,9 +31,12 @@ jobs:
 
       - name: Build & Push Backend
         run: |
-          docker build -t ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }} \
-            ./backend/ContactApi
-          docker push ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }}
+          IMAGE=ghcr.io/${{ github.repository }}/people-api:${{ steps.meta.outputs.tag }}
+          docker build -t $IMAGE ./backend/ContactApi
+          docker push $IMAGE
+          # docker build -t ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }} \
+          #   ./backend/ContactApi
+          # docker push ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }}
 
       - name: Build & Push Frontend
         run: |
