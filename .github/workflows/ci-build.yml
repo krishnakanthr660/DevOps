@@ -1,0 +1,47 @@
+name: CI - Build & Push Images
+
+on:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    outputs:
+      image_tag: ${{ steps.meta.outputs.tag }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set image tag
+        id: meta
+        run: echo "tag=${GITHUB_SHA}" >> $GITHUB_OUTPUT
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: krishnakanthr660
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: Build & Push Backend
+        run: |
+          REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$REPO/people-api:${{ steps.meta.outputs.tag }}
+          docker build -t $IMAGE ./backend/ContactApi
+          docker push $IMAGE
+          # docker build -t ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }} \
+          #   ./backend/ContactApi
+          # docker push ghcr.io/krishnakanthr660/devops/people-api:${{ steps.meta.outputs.tag }}
+
+      - name: Build & Push Frontend
+        run: |
+          docker build -t ghcr.io/krishnakanthr660/devops/people-ui:${{ steps.meta.outputs.tag }} \
+            ./frontend/contact-ui
+          docker push ghcr.io/krishnakanthr660/devops/people-ui:${{ steps.meta.outputs.tag }}
