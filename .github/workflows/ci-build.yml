@@ -2,7 +2,7 @@ name: CI - Build & Push Images
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
 
     permissions:
       contents: read
-      packages: writes
+      packages: write
 
     outputs:
       image_tag: ${{ steps.meta.outputs.tag }}
