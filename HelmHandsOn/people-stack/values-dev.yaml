@@ -1,14 +1,11 @@
 backend:
-  image: people-api:dev
   replicas: 1
 
   env:
     ASPNETCORE_ENVIRONMENT: Development
 
 frontend:
-  image: people-ui:dev
   replicas: 1
-  nodePort: 30081
 
 postgres:
   storage:
