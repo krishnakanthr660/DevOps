@@ -1,5 +1,17 @@
 name: first
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types:
+      - opened
+      - closed
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' # dev-new dev-new-feat
+      - 'feat/**' # feat/new
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   Run-Test:
     runs-on: ubuntu-latest
@@ -41,30 +53,3 @@ jobs:
         run: echo "deploying...."
       - name: expression and object
         run: echo "${{ toJson(github) }}"
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v6.0.0
-        with:
-          name: my-artifact
-          path: |
-            path/output/bin/
-            path/output/test-results
-            !path/**/*.tmp
-  DeployWithArtiFromAboveJob:
-    needs: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello
-        run: |
-          echo "First output"
-          echo "Second output"
-      - name: Checkout
-        uses: actions/checkout@v6.0.1
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6.2.0
-        with:
-          node-version: 16
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v7.0.0
-        with:
-          name: my-artifact # should be same as previous job upload artifact
-  
