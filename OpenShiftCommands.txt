@@ -128,3 +128,42 @@ Id CommandLine
   64 helm upgrade myapp .\people-stack-0.1.0.tgz
   65 kubectl get pods
   66 kubectl logs myapp-frontend-86d48f758c-brkfb
+
+
+  PS D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager> get-history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:\KrishnaLearning\DevOps\Kube\HandsOn\contact-manager
+   2 ls
+   3 oc login --token=sha256~YePIvLJUUcK0piO7TShOxi-WXH6JNDLUIteQOWr6rdU --server=https://api.rm1.0a51.p1.openshiftapps.com:6443
+   4 kubectl config current-context
+   5 kubectl config view --minify --raw > kubeconfig-ci.yaml
+   6 ls
+   7 cat .\kubeconfig-ci.yaml
+   8 KUBECONFIG=./kubeconfig-ci.yaml kubectl get pods
+   9 $env:KUBECONFIG = ".\kubeconfig-ci.yaml"
+  10 kubectl get pods
+  11 $env:KUBECONFIG=".\kubeconfig-ci.yaml"; kubectl get pods
+  12 env
+  13 env list
+  14 Get-ChildItem Env:
+  15 Remove-Item Env:\KUBECONFIG
+  16 kubectl get pods
+  17 kubectl config view --raw --minify
+  18 certutil -encode kubeconfig-ci.yaml kubeconfig.b64
+  19 ls
+  20 cat .\kubeconfig.b64
+  21 Get-Content kubeconfig.yaml | Set-Content -Encoding utf8 kubeconfig-utf8.yaml
+  22 Get-Content .\kubeconfig-ci.yaml | Set-Content -Encoding utf8 kubeconfig-utf8.yaml
+  23 [Convert]::ToBase64String(...
+  24 ls
+  25 cat .\kubeconfig.b64
+  26 helm list
+  27 helm uninstall myapp
+  28 helm list
+  29 kubectl get pods
+  30 kubectl logs people-backend-656d4c9998-4vkdr
+  31 kubectl logs people-frontend-cf8d87bd9-mfkwh
+  32 kubectl get svc
+  33 get-content
