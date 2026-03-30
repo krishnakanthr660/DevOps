@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "PostHog .NET Demo";
+    var userId = "demo-user-1";
+    var companyId = "acme-corp";
+    var email = "demo@example.com";
+}
+
+<h1>PostHog .NET Demo</h1>
+<p>Click each section below to fire real PostHog events and see them appear in your PostHog dashboard.</p>
+
+<hr />
+
+<!-- 1. Product Analytics -->
+<section>
+    <h2>1. 📊 Product analytics</h2>
+    <p>Identifies a user and captures a <code>user_signed_up</code> event with properties.</p>
+    <a href="/Demo/Signup?email=@email">
+        <button>Run signup event</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 2. Feature Flags -->
+<section>
+    <h2>2. 🚩 Feature flags</h2>
+    <p>Evaluates <code>new-dashboard</code> and <code>pricing-experiment</code> flags for the demo user.</p>
+    <a href="/Demo/FeatureFlags?userId=@userId">
+        <button>Check feature flags</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 3. A/B Experiment -->
+<section>
+    <h2>3. 🧪 A/B experiment</h2>
+    <p>Evaluates the <code>checkout-button-experiment</code> flag and renders a different button per variant.</p>
+    <a href="/Demo/Experiment?userId=@userId">
+        <button>View experiment variant</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 4. Group Analytics -->
+<section>
+    <h2>4. 🏢 Group analytics</h2>
+    <p>Captures a <code>report_generated</code> event associated with a company group.</p>
+    <a href="/Demo/GroupAnalytics?userId=@userId&companyId=@companyId">
+        <button>Capture group event</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 5. Error Tracking -->
+<section>
+    <h2>5. 🐛 Error tracking</h2>
+    <p>Simulates a backend exception and sends it to PostHog as a <code>$exception</code> event.</p>
+    <a href="/Demo/ErrorDemo?userId=@userId">
+        <button>Trigger error capture</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 6. Funnel Simulation -->
+<section>
+    <h2>6. 🔁 Funnel simulation</h2>
+    <p>
+        Fires a chain of events: <code>viewed_pricing_page</code> → <code>clicked_start_trial</code>
+        → <code>completed_onboarding</code> → <code>first_purchase</code>.
+        Build a funnel insight in PostHog to visualize drop-off.
+    </p>
+    <a href="/Demo/SimulateFunnel?userId=@userId">
+        <button>Simulate funnel</button>
+    </a>
+</section>
+
+<hr />
+
+<!-- 7. Session Replay + Surveys (frontend JS) -->
+<section>
+    <h2>7. 🎥 Session replay &amp; surveys</h2>
+    <p>
+        These are powered by the PostHog JS snippet in <code>_Layout.cshtml</code>.
+        Just navigate around the app – PostHog is already recording this session.
+        Surveys will auto-appear based on targeting rules you configure in PostHog.
+    </p>
+    <ul>
+        <li>View recordings at <strong>/replay</strong> in your PostHog dashboard</li>
+        <li>Create a survey at <strong>/surveys</strong> – it appears automatically via the JS snippet</li>
+    </ul>
+</section>
+
+<hr />
+
+<p><small>All events are fired for demo user ID: <code>@userId</code></small></p>  

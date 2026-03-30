@@ -1,0 +1,19 @@
+﻿<h2>🚩 Feature flag results</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Flag</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>new-dashboard</td>
+        <td>@(ViewBag.NewDashboard == true ? "✅ Enabled" : "❌ Disabled")</td>
+    </tr>
+    <tr>
+        <td>pricing-experiment</td>
+        <td>@(ViewBag.PricingVariant ?? "null (flag not found)")</td>
+    </tr>
+</table>
+
+<br />
+<a href="/Demo/Index"><button>← Back to demo home</button></a>  

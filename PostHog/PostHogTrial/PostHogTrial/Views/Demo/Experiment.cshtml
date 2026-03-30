@@ -1,0 +1,33 @@
+﻿@{
+    var variant = ViewBag.Variant as string;
+    var userId = ViewBag.UserId as string;
+}
+
+<h2>A/B Experiment: Checkout button</h2>
+
+@if (variant == "control")
+{
+    <form method="post" action="/Demo/ExperimentConvert">
+        <input type="hidden" name="userId" value="@userId" />
+        <input type="hidden" name="variant" value="control" />
+        <button type="submit" style="background:gray; color:white; padding:12px 24px;">
+            Buy Now
+        </button>
+    </form>
+}
+else if (variant == "variant-a")
+{
+    <form method="post" action="/Demo/ExperimentConvert">
+        <input type="hidden" name="userId" value="@userId" />
+        <input type="hidden" name="variant" value="variant-a" />
+        <button type="submit" style="background:green; color:white; padding:12px 24px;">
+            🚀 Start Free Trial
+        </button>
+    </form>
+}
+else
+{
+    <p>No variant assigned yet.</p>
+}
+
+<p><small>Variant: <strong>@variant</strong> | User: @userId</small></p>  

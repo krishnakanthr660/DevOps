@@ -1,49 +1,47 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PostHogTrial</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/PostHogTrial.styles.css" asp-append-version="true" />
+    <title>PostHog Demo</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- PostHog JS: enables session replay, surveys, web analytics, frontend flags -->
+    <script>
+
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){...}
+        // Paste the full PostHog snippet from your Project Settings > Web snippet
+    </script>
+    <script>
+
+        posthog.init('phc_jRa3DNXJnkyt9kzd5od04vttqIuFzksgc2tJqGPaubz', {
+            api_host: 'https://us.i.posthog.com',
+
+            // Session replay
+            session_recording: {
+                recordCrossOriginIframes: false
+            },
+
+            // Capture all clicks, inputs, and page views automatically
+            autocapture: true,
+
+            // Enable surveys
+            enable_heatmaps: true
+        });
+    </script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PostHogTrial</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <nav>
+        <a href="/Demo/Index">Home</a> |
+        <a href="/Demo/Signup?email=demo@example.com">1. Signup (analytics)</a> |
+        <a href="/Demo/FeatureFlags?userId=demo-user-1">2. Feature flags</a> |
+        <a href="/Demo/Experiment?userId=demo-user-1">3. A/B experiment</a> |
+        <a href="/Demo/GroupAnalytics?userId=demo-user-1&companyId=acme-corp">4. Groups</a> |
+        <a href="/Demo/ErrorDemo?userId=demo-user-1">5. Error tracking</a> |
+        <a href="/Demo/SimulateFunnel?userId=demo-user-1">6. Funnel</a>
+    </nav>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - PostHogTrial - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <main>
+        @RenderBody()
+    </main>
 </body>
-</html>
+</html>  
